@@ -18,6 +18,8 @@ download_release "$ASDF_INSTALL_VERSION" "$release_file"
 #  Extract contents of tar.gz file into the download directory
 tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" || fail "Could not extract $release_file"
 
+cp "$ASDF_DOWNLOAD_PATH/hunkdiff-$(get_platform)-$(get_arch)/$TOOL_NAME" "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
+
 chmod +x "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
 
 # Remove the tar.gz file since we don't need to keep it
